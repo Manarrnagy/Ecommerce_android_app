@@ -1,6 +1,5 @@
 package com.example.ecommerce_android_app.api
 
-import com.example.ecommerce_android_app.model.WebServices
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

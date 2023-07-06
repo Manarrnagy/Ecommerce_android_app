@@ -1,8 +1,8 @@
-package com.example.ecommerce_android_app.model
+package com.example.ecommerce_android_app.api
 
+import com.example.ecommerce_android_app.model.ProductsResponse
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface WebServices {
     @GET("/products")

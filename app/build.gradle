@@ -62,7 +62,7 @@ dependencies {
     //paging3
     implementation "androidx.paging:paging-runtime:3.0.0-alpha03"
 
-    //recycler paging
+    //MVVM _ Live Data
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
