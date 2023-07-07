@@ -1,4 +1,4 @@
-package com.example.ecommerce_android_app.view_model
+package com.example.ecommerce_android_app.ui.theme.screens.home.home_view_model
 
 import android.content.Context
 import android.util.Log
@@ -24,7 +24,6 @@ class ProductsViewModel : ViewModel() {
                 response: Response<ProductsResponse>
             ) {
                 progressVisibilityLiveData.value= false
-                //binding.progressBar.isVisible = false
                 Log.e("ON RESPONSE ##","${response.body()}")
                 tabsliveData.value = response.body()?.products as List<ProductItem>
 
@@ -33,7 +32,7 @@ class ProductsViewModel : ViewModel() {
             override fun onFailure(call: Call<ProductsResponse>, t: Throwable) {
                 progressVisibilityLiveData.value= false
                 Log.e("ON FALIURE ##","$t")
-                Toast.makeText(context,"Something went wrong!", Toast.LENGTH_LONG).show()
+
             }
         })
     }

@@ -7,26 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.ecommerce_android_app.R
+import com.example.ecommerce_android_app.databinding.ActivityHomeBinding
+import com.example.ecommerce_android_app.databinding.ProductItemBinding
 import com.example.ecommerce_android_app.model.ProductItem
 
 class ProductsAdapter(var products : List<ProductItem>) : Adapter<ProductsAdapter.ProductsViewHolder>() {
-    class ProductsViewHolder(val item: View): ViewHolder(item) {
-        val thumbnail : ImageView = item.findViewById(R.id.thumbnail)
-        val title : TextView = item.findViewById(R.id.product_title)
-        val description : TextView = item.findViewById(R.id.product_description)
-        val price : TextView = item.findViewById(R.id.product_price)
-        val discount : TextView = item.findViewById(R.id.product_discount)
-        val rating : TextView = item.findViewById(R.id.product_rating)
+
+    class ProductsViewHolder(val binding : ProductItemBinding): ViewHolder(binding.root) {
+
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.product_item, parent,false)
-        return ProductsViewHolder(view)
+        val binding = DataBindingUtil.inflate<ProductItemBinding>( LayoutInflater.from(parent.context),R.layout.product_item, parent,false)
+        return ProductsViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -35,13 +34,13 @@ class ProductsAdapter(var products : List<ProductItem>) : Adapter<ProductsAdapte
 
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
         val product = products.get(position)
-        holder.description.text = product?.description
-        holder.title.text = product?.title
-        holder.rating.text = product?.rating.toString()
-        holder.price.text = product?.price.toString()
-        holder.price.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-        holder.discount.text = ((100 - product!!.discountPercentage.toString().toDouble( ))/100*product?.price.toString().toDouble()).toInt().toString()
-        Glide.with(holder.item).load(product?.thumbnail).into(holder.thumbnail)
+        holder.binding.productDescription.text = product?.description
+        holder.binding.productTitle.text = product?.title
+        holder.binding.productRating.text = product?.rating.toString()
+        holder.binding.productPrice.text = product?.price.toString()
+        holder.binding.productPrice.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+        holder.binding.productDiscount.text = ((100 - product!!.discountPercentage.toString().toDouble( ))/100*product?.price.toString().toDouble()).toInt().toString()
+        Glide.with(holder.binding.thumbnail).load(product?.thumbnail).into(holder.binding.thumbnail)
     }
 
     fun changeData(newList : List<ProductItem>){

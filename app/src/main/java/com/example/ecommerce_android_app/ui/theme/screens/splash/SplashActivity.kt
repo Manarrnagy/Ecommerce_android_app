@@ -1,19 +1,12 @@
-package com.example.ecommerce_android_app
+package com.example.ecommerce_android_app.ui.theme.screens.splash
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.ecommerce_android_app.ui.theme.Ecommerce_android_appTheme
+import com.example.ecommerce_android_app.R
+import com.example.ecommerce_android_app.ui.theme.screens.home.HomeActivity
 
 class SplashActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

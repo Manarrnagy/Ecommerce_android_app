@@ -16,12 +16,12 @@
 <!--            android:name=".HomeActivity"-->
 <!--            android:exported="false" />-->
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.theme.screens.home.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Ecommerce_android_app" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.theme.screens.splash.SplashActivity"
             android:exported="true"
             android:label="@string/title_activity_splash"
             android:theme="@style/Theme.Ecommerce_android_app">

@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_margin="8dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/productCardView"
@@ -69,7 +69,8 @@
                     android:layout_marginTop="0dp"
                     android:textSize="11sp"
                     android:textColor="@color/black"
-                    android:maxLines="2" />
+                    android:maxLines="2"
+                    android:maxWidth="150dp"/>
 
                 <TextView
                     android:id="@+id/product_discount"
